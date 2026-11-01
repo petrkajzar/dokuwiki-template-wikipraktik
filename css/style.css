@@ -1,0 +1,303 @@
+/**
+ * This file provides the most basic styles.
+ *
+ * If you integrate DokuWiki into another project, you might either
+ * want to integrate this file into the other project as well, or use
+ * the other project's basic CSS for DokuWiki instead of this one.
+ *
+ * @author Petr Kajzar <petr.kajzar@centrum.cz>
+ */
+
+/*********** Basic styles ***********/
+
+html,
+body {
+    background-image: radial-gradient(#dddedf 1px, __background_alt__ 1px);
+    background-size: 10px 10px;
+    color: __text__;
+    font-family: sans-serif;
+    line-height: 1.4;
+    margin: 0;
+    padding-bottom: 1rem;
+}
+
+header {
+    align-items: center;
+    background-color: __theme_color__;
+    border: 1px solid __theme_color__;
+    color: #fff;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    padding: 0.2rem 1rem;
+    text-align: left;
+}
+
+a {
+    color: __link__;
+}
+
+footer {
+    background-color: __background__;
+    border-width: 3px 0;
+    border-style: solid;
+    border-color: __theme_color__;
+    color: #444;
+    font-size: 0.8rem;
+    margin: 0 auto;
+    max-width: __width__;
+    padding: 0.5rem 1rem;
+}
+
+img {
+    border-width: 0;
+}
+
+img,
+video {
+    height: auto;
+}
+
+img,
+object,
+iframe,
+video,
+audio,
+select {
+    max-width: 100%;
+}
+
+pre {
+    overflow: auto;
+}
+
+blockquote {
+    background: __background_alt__;
+    border-left: 5px solid __border__;
+    padding: 1em;
+}
+
+/*********** Admin ***********/
+
+.dokuwiki fieldset {
+    max-width: 90%;
+}
+
+/*********** Header ***********/
+
+#dokuwiki__header__left {
+    font-size: 1.25rem;
+    overflow: hidden;
+    padding: 0.5rem 0;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+#dokuwiki__header__right {
+    text-align: right;
+}
+
+#dokuwiki__header__left a {
+    color: #fff;
+    font-weight: bold;
+    text-decoration: none;
+}
+
+#dw__search {
+    padding: 0.5rem 0;
+    position: relative;
+}
+
+#qsearch__out {
+    border: 1px solid __border__;
+    border-radius: 5px;
+    display: none;
+    font-size: 0.9rem;
+    left: 0;
+    padding: 0.5rem;
+    position: absolute;
+    right: 0;
+    text-align: left;
+}
+
+#qsearch__out strong {
+    display: inline-block;
+    max-width: 100%;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+#qsearch__out ul {
+    margin: 0;
+    padding: 0;
+}
+
+.claim {
+    color: rgba(255, 255, 255, 0.9);
+    display: block;
+    font-size: 0.9rem;
+    font-weight: normal;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+header input[type="text"] {
+    border: 1px solid __border__;
+    border-radius: 5px 0 0 5px;
+    font-size: inherit;
+    padding: 0.3rem 0.5rem;
+}
+
+header button {
+    border: 1px solid __border__;
+    border-radius: 0 5px 5px 0;
+    font-size: inherit;
+    padding: 0.3rem 0.5rem;
+}
+
+/*********** Content ***********/
+
+#site_wrapper {
+    background-color: __background__;
+    margin: 0 auto;
+    max-width: __width__;
+    padding: 0.5rem 1rem 2rem;
+}
+
+.breadcrumbs {
+    font-size: 0.875rem;
+}
+
+#dw__toc {
+    border: 1px solid __border__;
+    border-radius: 5px;
+    font-size: 0.875rem;
+    padding-bottom: 1rem;
+}
+
+#dw__toc h3 {
+    margin: 0.5rem 0;
+}
+
+pre.code {
+    background-color: __background_alt__;
+    border: 1px solid __border__;
+    color: __text_alt__;
+    padding: 0.5rem;
+}
+
+#dokuwiki__aside {
+    padding: 0.5rem 0;
+}
+
+#dokuwiki__aside p {
+    margin: 0;
+}
+
+#dokuwiki__aside a,
+#dokuwiki__aside a:hover {
+    border-bottom: 1px dashed;
+    text-decoration: none;
+}
+
+/*********** Tables ***********/
+
+table {
+    border: 1px solid __border__;
+    border-collapse: collapse;
+    border-spacing: 0;
+    empty-cells: show;
+    margin: 0 auto;
+    max-width: 100%;
+}
+
+caption {
+    caption-side: top;
+    text-align: left;
+}
+
+th,
+td {
+    border: 1px solid __border__;
+    margin: 0;
+    padding: 0.3rem 0.5rem;
+    vertical-align: top;
+}
+
+th {
+    background-color: __background_alt__;
+    font-weight: bold;
+    text-align: left;
+}
+
+/*********** Code ***********/
+
+.dokuwiki dl.code dt,
+.dokuwiki dl.file dt {
+    background-color: __background__;
+    color: inherit;
+    border: 1px solid __border__;
+    border-bottom-color: __background__;
+    border-top-left-radius: 0.3em;
+    border-top-right-radius: 0.3em;
+    padding: 0.3em 0.6em 0.1em;
+    margin-bottom: -1px;
+    float: left;
+}
+.dokuwiki dl.code dt a,
+.dokuwiki dl.file dt a {
+    background-color: transparent;
+    font-size: 0.875em;
+    font-weight: normal;
+    display: block;
+    min-height: 16px;
+}
+.dokuwiki dl.code dd,
+.dokuwiki dl.file dd {
+    margin: 0;
+    clear: left;
+}
+
+.dokuwiki dl.file pre,
+.dokuwiki dl.file dt {
+    border-style: dashed;
+}
+
+.dokuwiki dl.file dt {
+    border-bottom-style: solid;
+}
+
+/*********** Footer ***********/
+
+#dokuwiki__footer {
+    min-height: 1.2rem;
+}
+
+#dokuwiki__footer ul {
+    display: inline;
+    margin: 0;
+    padding: 0;
+}
+
+#dokuwiki__footer li {
+    display: inline;
+    list-style-type: none;
+}
+
+#dokuwiki__footer li::before {
+    content: ' — ';
+}
+
+#dokuwiki__footer svg {
+    display: none;
+}
+
+.license {
+    margin: 0 auto;
+    max-width: __width__;
+    padding: 1rem;
+}
+
+#dw_menu {
+    float: right;
+}

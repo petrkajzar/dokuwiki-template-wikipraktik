@@ -1,0 +1,7 @@
+base     wikipraktik
+author   Petr Kajzar
+email    petr.kajzar@centrum.cz
+date     2023-10-07
+name     WikiPraktik Template
+desc     Simple reader-oriented responsive template for DokuWiki
+url      https://www.dokuwiki.org/template:wikipraktik
