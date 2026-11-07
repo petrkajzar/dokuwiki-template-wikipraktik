@@ -15,15 +15,15 @@ if (!defined('DOKU_INC')) die();
 ?><!DOCTYPE html>
 <html lang="<?php echo $conf['lang']?>" dir="<?php echo $lang['direction'] ?>" class="no-js">
 <head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width">
-<title>
-    <?php echo hsc(tpl_img_getTag('IPTC.Headline', $IMG))?> [<?php echo strip_tags($conf['title'])?>]
-</title>
-<script>(function(H){H.className=H.className.replace(/\bno-js\b/,'js')})(document.documentElement)</script>
-<?php tpl_metaheaders()?>
-<?php echo tpl_favicon(array('favicon')) ?>
-<?php tpl_includeFile('meta.html') ?>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width">
+    <title>
+        <?php echo hsc(tpl_img_getTag('IPTC.Headline', $IMG))?>
+        [<?php echo strip_tags($conf['title'])?>]
+    </title>
+    <?php tpl_metaheaders()?>
+    <?php echo tpl_favicon(['favicon', 'mobile']) ?>
+    <?php tpl_includeFile('meta.html') ?>
 </head>
 
 <body>
@@ -37,8 +37,8 @@ if (!defined('DOKU_INC')) die();
             <main id="dokuwiki__content"><div class="pad group">
                 <?php html_msgarea() ?>
 
-                <?php if(!$ERROR): ?>
-                    <div class="pageId"><span><?php echo hsc(tpl_img_getTag('IPTC.Headline',$IMG)); ?></span></div>
+                <?php if (!$ERROR) : ?>
+                    <div class="pageId"><span><?php echo hsc(tpl_img_getTag('IPTC.Headline', $IMG)); ?></span></div>
                 <?php endif; ?>
 
                 <div class="page group">
@@ -46,26 +46,26 @@ if (!defined('DOKU_INC')) die();
                     <?php tpl_includeFile('pageheader.html') ?>
                     <!-- detail start -->
                     <?php
-                    if($ERROR):
-                        echo '<h1>'.$ERROR.'</h1>';
-                    else: ?>
-                        <?php if($REV) echo p_locale_xhtml('showrev');?>
+                    if ($ERROR) :
+                        echo '<h1>' . $ERROR . '</h1>';
+                    else : ?>
+                        <?php if ($REV) echo p_locale_xhtml('showrev');?>
                         <h1><?php echo nl2br(hsc(tpl_img_getTag('simple.title'))); ?></h1>
 
-                        <?php tpl_img(900,700); /* parameters: maximum width, maximum height (and more) */ ?>
+                        <?php tpl_img(900, 700); /* parameters: maximum width, maximum height (and more) */ ?>
 
                         <div class="img_detail">
                             <?php tpl_img_meta(); ?>
                             <dl>
                             <?php
-                            echo '<dt>'.$lang['reference'].':</dt>';
-                            $media_usage = ft_mediause($IMG,true);
-                            if(count($media_usage) > 0){
-                                foreach($media_usage as $path){
-                                    echo '<dd>'.html_wikilink($path).'</dd>';
+                            echo '<dt>' . $lang['reference'] . ':</dt>';
+                            $media_usage = (new \dokuwiki\Search\MetadataSearch())->mediause($IMG);
+                            if ($media_usage !== []) {
+                                foreach ($media_usage as $path) {
+                                    echo '<dd>' . html_wikilink($path) . '</dd>';
                                 }
-                            }else{
-                                echo '<dd>'.$lang['nothingfound'].'</dd>';
+                            } else {
+                                echo '<dd>' . $lang['nothingfound'] . '</dd>';
                             }
                             ?>
                             </dl>
@@ -87,7 +87,7 @@ if (!defined('DOKU_INC')) die();
             <hr class="a11y" />
 
             <!-- PAGE ACTIONS -->
-            <?php if (!$ERROR): ?>
+            <?php if (!$ERROR) : ?>
                 <nav id="dokuwiki__pagetools" aria-labelledby="dokuwiki__pagetools__heading">
                     <h3 class="a11y" id="dokuwiki__pagetools__heading"><?php echo $lang['page_tools']; ?></h3>
                     <div class="tools">

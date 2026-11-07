@@ -18,7 +18,6 @@ $showSidebar = $hasSidebar && ($ACT=='show');
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width">
 <title><?php tpl_pagetitle() ?> – <?php echo strip_tags($conf['title']) ?></title>
-<script>(function(H){H.className=H.className.replace(/\bno-js\b/,'js')})(document.documentElement)</script>
 <?php tpl_metaheaders() ?>
 <?php echo tpl_favicon(array('favicon')) ?>
 <?php tpl_includeFile('meta.html') ?>
@@ -63,7 +62,7 @@ $showSidebar = $hasSidebar && ($ACT=='show');
 <?php } ?>
 
 <!-- ********** CONTENT ********** -->
-<main id="dokuwiki__content">
+<main id="dokuwiki__content"><div class="pad group">
     <?php tpl_flush() ?>
 
     <div class="page group">
@@ -75,7 +74,7 @@ $showSidebar = $hasSidebar && ($ACT=='show');
     </div>
 
     <?php tpl_flush() ?>
-</main><!-- /content -->
+</div></main><!-- /content -->
 
 </div><!-- /wrapper -->
 
@@ -102,7 +101,7 @@ $showSidebar = $hasSidebar && ($ACT=='show');
     <a href="https://www.dokuwiki.org/" title="DokuWiki" target="_blank"><img
         src="<?php echo tpl_basedir(); ?>../dokuwiki/images/button-dw.png" width="80" height="15"
         alt="DokuWiki"></a>
-    <?php tpl_license($img = 'button', $imgOnly = true, $return = false, $wrap = false) ?>
+    <?php tpl_license('button', true, false, false) ?>
 </div>
 <div class="no"><?php tpl_indexerWebBug() ?></div>
 
